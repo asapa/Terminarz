@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_marginTop="45dp"
+        android:id="@+id/taskDescTV"
+        android:layout_below="@+id/dueDateTV"
+        android:layout_height="100dp" />
+
+    <EditText
+        android:layout_marginTop="11dp"
+        android:id="@+id/taskNameTV"
+        android:layout_height="40dp"
+        android:layout_width="200dp"
+        android:layout_below="@+id/textView1"
+        android:layout_toStartOf="@+id/textView3" />
+
+    <TextView
+        android:text="Due Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_above="@+id/taskNameTV"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="94dp" />
+
+    <EditText
+        android:layout_height="40dp"
+        android:id="@+id/dueDateTV"
+        android:layout_width="225dp"
+        android:layout_alignBaseline="@+id/taskNameTV"
+        android:layout_alignBottom="@+id/taskNameTV"
+        android:layout_toEndOf="@+id/textView3" />
+
+    <TextView
+        android:text="Task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView1"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/taskNameTV"
+        android:layout_marginEnd="79dp" />
+
+    <TextView
+        android:text="Task description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/dueDateTV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/taskDescTV"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:text="Save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.50"
+            android:id="@+id/saveBtn" />
+
+        <Button
+            android:text="Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cancelBtn"
+            android:layout_weight="0.50" />
+    </LinearLayout>
+
+</RelativeLayout>
