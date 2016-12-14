@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_task"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    tools:context="com.example.asapa.terminarz.AddTask">
 
     <TextView
         android:text="Task"
@@ -68,18 +71,18 @@
         android:layout_marginBottom="10dp">
 
         <Button
+            android:text="Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cancelBtn"
+            android:layout_weight="0.30" />
+
+        <Button
             android:text="Save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/saveBtn"
             android:layout_weight="0.30" />
 
-        <Button
-            android:text="Cancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/cancelBtn"
-            android:layout_weight="0.30" />
     </LinearLayout>
-
 </RelativeLayout>

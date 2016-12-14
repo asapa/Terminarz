@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_show_task"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    tools:context="com.example.asapa.terminarz.ShowTask">
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_marginTop="45dp"
         android:id="@+id/taskDescTV"
         android:layout_below="@+id/dueDateTV"
         android:layout_height="100dp" />
 
-    <EditText
+    <TextView
         android:layout_marginTop="11dp"
         android:id="@+id/taskNameTV"
         android:layout_height="40dp"
@@ -28,7 +31,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="94dp" />
 
-    <EditText
+    <TextView
         android:layout_height="40dp"
         android:id="@+id/dueDateTV"
         android:layout_width="225dp"
@@ -65,18 +68,17 @@
         android:layout_alignParentStart="true">
 
         <Button
-            android:text="Save"
+            android:text="Edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.50"
-            android:id="@+id/saveBtn" />
+            android:id="@+id/editBtn" />
 
         <Button
-            android:text="Cancel"
+            android:text="Delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/cancelBtn"
+            android:id="@+id/deleteBtn"
             android:layout_weight="0.50" />
     </LinearLayout>
-
 </RelativeLayout>
