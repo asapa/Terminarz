@@ -17,14 +17,14 @@
         android:layout_marginBottom="10dp">
 
         <Button
-            android:text="Cancel"
+            android:text="@android:string/cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cancelBtn"
             android:layout_weight="0.30" />
 
         <Button
-            android:text="Save"
+            android:text="@string/btn_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/saveBtn"
@@ -33,7 +33,7 @@
     </LinearLayout>
 
     <TextView
-        android:text="Task"
+        android:text="@string/Task"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -59,7 +59,7 @@
         android:layout_width="250dp" />
 
     <TextView
-        android:text="Due Date"
+        android:text="@string/termin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
@@ -86,29 +86,29 @@
         android:layout_marginStart="17dp" />
 
     <Button
-        android:text="CHOOSE  DATE"
+        android:text="@string/Btn_choose_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnDate"
         android:layout_weight="1"
-        android:layout_alignBaseline="@+id/dueDateTV"
         android:layout_alignBottom="@+id/dueDateTV"
         android:layout_toStartOf="@+id/btnTime"
-        android:layout_marginEnd="31dp" />
+        android:layout_marginEnd="31dp"
+        android:layout_alignTop="@+id/dueDateTV" />
 
     <Button
-        android:text="CHOOSE TIME"
+        android:text="@string/Btn_choose_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnTime"
         android:layout_weight="1"
         android:layout_marginEnd="13dp"
-        android:layout_alignBaseline="@+id/btnDate"
         android:layout_alignBottom="@+id/btnDate"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/btnDate" />
 
     <TextView
-        android:text="Task description"
+        android:text="@string/TaskDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView3"

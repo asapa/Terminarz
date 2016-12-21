@@ -33,7 +33,7 @@
     </LinearLayout>
 
     <TextView
-        android:text="Task"
+        android:text="@string/Task"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -51,7 +51,7 @@
         android:layout_height="40dp" />
 
     <TextView
-        android:text="Task description"
+        android:text="@string/TaskDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="63dp"
@@ -68,14 +68,14 @@
         android:layout_marginTop="12dp">
 
         <Button
-            android:text="CHOOSE  DATE"
+            android:text="@string/Btn_choose_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnDate"
             android:layout_weight="1" />
 
         <Button
-            android:text="CHOOSE TIME"
+            android:text="@string/Btn_choose_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnTime"
@@ -91,7 +91,7 @@
         android:layout_toEndOf="@+id/textView2" />
 
     <TextView
-        android:text="Due Date"
+        android:text="@string/termin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"

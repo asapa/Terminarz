@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">Terminarz</string>
+    <string name="termin">Due Date</string>
+    <string name="TaskDescription">Task Description:</string>
+    <string name="Task">Task:</string>
+    <string name="Btn_choose_date">Choose Date</string>
+    <string name="Btn_choose_time">Choose Time</string>
+    <string name="Btn_add_new_task">Add New Task</string>
+    <string name="Login">Login</string>
+    <string name="Password">Password:</string>
+    <string name="Register">Register</string>
+    <string name="Password_confirm">Confirm Password</string>
+    <string name="btn_save">Save</string>
     <string-array name="priorities">
         <item>Important</item>
         <item>Less Important</item>
