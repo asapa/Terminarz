@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this,AllTasks.class);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(LoginActivity.this, "Wrong login or password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,getApplicationContext().getString(R.string.login_error), Toast.LENGTH_SHORT).show();
                 }
 
 
