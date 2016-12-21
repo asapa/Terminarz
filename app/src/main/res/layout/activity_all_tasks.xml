@@ -11,7 +11,7 @@
     tools:context="com.example.asapa.terminarz.AllTasks">
 
     <TextView
-        android:text="Tasks"
+        android:text="@string/Task"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -20,18 +20,16 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
         android:id="@+id/tasksLV"
-        android:layout_height="350dp" />
+        android:layout_height="350dp"
+        android:layout_below="@+id/textView" />
 
     <Button
-        android:text="Add new task"
+        android:text="@string/Btn_add_new_task"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
-        android:id="@+id/btnAdd" />
+        android:id="@+id/btnAdd"
+        android:layout_below="@+id/tasksLV"
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>

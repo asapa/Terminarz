@@ -30,7 +30,7 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:text="Login"
+        android:text="@string/Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView4"
@@ -50,7 +50,7 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:text="Password"
+        android:text="@string/Password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/loginEditText"
@@ -59,11 +59,30 @@
         android:id="@+id/textView9" />
 
     <Button
-        android:text="Register"
+        android:text="@string/Register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/passEditText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
-        android:id="@+id/btnRegister" />
+        android:id="@+id/btnRegister"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="94dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="@string/Password_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
