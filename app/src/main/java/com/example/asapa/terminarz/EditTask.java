@@ -1,9 +1,5 @@
 package com.example.asapa.terminarz;
 
-
-import java.text.DateFormat;
-import java.util.Calendar;
-
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -18,7 +14,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
-public class AddTask extends AppCompatActivity {
+import java.text.DateFormat;
+import java.util.Calendar;
+
+public class EditTask extends AppCompatActivity {
 
     Calendar dateTime = Calendar.getInstance();
     DateFormat formatDateTime = DateFormat.getDateTimeInstance();
@@ -32,7 +31,8 @@ public class AddTask extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_task);
+        setContentView(R.layout.activity_edit_task);
+
         txt = (TextView) findViewById(R.id.dueDateTV);
         btnDate = (Button) findViewById(R.id.btnDate);
         btnTime = (Button) findViewById(R.id.btnTime);
@@ -46,6 +46,20 @@ public class AddTask extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
+        final String name = getIntent().getStringExtra("name");
+        final String desc = getIntent().getStringExtra("desc");
+        final String prio = getIntent().getStringExtra("prio");
+        final String due_date = getIntent().getStringExtra("due_date");
+        Bundle bdl = getIntent().getExtras();
+        final long id = bdl.getLong("ID");
+
+        txt.setText(due_date);
+        taskName.setText(name);
+        taskDesc.setText(desc);
+        if(!prio.equals(null)){
+            int spinnerPosition = adapter.getPosition(prio);
+            spinner.setSelection(spinnerPosition);
+        }
 
         btnDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,21 +79,24 @@ public class AddTask extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Task task = new Task();
+                task.setId(id);
                 task.setName(taskName.getText().toString());
                 task.setDesc(taskDesc.getText().toString());
                 String text = spinner.getSelectedItem().toString();
                 task.setPrio(text);
                 task.setDue_date(txt.getText().toString());
-                dataManager.saveTask(task);
-                Intent intent = new Intent(AddTask.this,AllTasks.class);
+                dataManager.updateTask(task);
+                Intent intent = new Intent(EditTask.this,AllTasks.class);
                 startActivity(intent);
             }
+
+
         });
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddTask.this,AllTasks.class);
+                Intent intent = new Intent(EditTask.this,AllTasks.class);
                 startActivity(intent);
             }
         });
@@ -117,5 +134,4 @@ public class AddTask extends AppCompatActivity {
     private void updateDueDate(){
         txt.setText(formatDateTime.format(dateTime.getTime()));
     }
-
 }

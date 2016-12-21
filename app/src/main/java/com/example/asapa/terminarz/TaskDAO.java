@@ -14,15 +14,14 @@ public class TaskDAO implements DAO<Task>{
     private static final String TABLE_TASKS = "tasks";
     private static final String KEY_TASK_ID= "id_task";
     private static final String KEY_TASK_NAME= "task_name";
-    private static final String KEY_USER_ID = "id_user";
-    private static final String KEY_DESC_ID = "id_desc";
-    private static final String KEY_PRIO_ID = "id_prio";
-    private static final String KEY_DUE_DATE = "due_date";
+    private static final String KEY_DESC_ = "desc";
+    private static final String KEY_PRIO = "prio";
+    private static final String KEY_DUE_DATE = "due_date";;
 
     private static final String INSERT =
             "insert into " + TABLE_TASKS
-                    + "(" + KEY_TASK_ID + ", " + KEY_TASK_NAME + ", "
-                    + KEY_USER_ID + ", " + KEY_DESC_ID + ", " + KEY_PRIO_ID + ", " + KEY_DUE_DATE + ") values (?, ?, ?, ?, ?)";
+                    + "(" + KEY_TASK_NAME + ", "
+                    + KEY_DESC_ + ", " + KEY_PRIO + ", " + KEY_DUE_DATE + ") values (?, ?, ?, ?)";
 
     private SQLiteDatabase db;
     private SQLiteStatement insertStatement;
@@ -33,13 +32,12 @@ public class TaskDAO implements DAO<Task>{
     }
 
     @Override
-    public long save(Task task, long id_user) {
+    public long save(Task task) {
         insertStatement.clearBindings();
-        insertStatement.bindString(1, task.get_task_name());
-        insertStatement.bindLong(2, id_user);
-        insertStatement.bindLong(3, task.get_desc_id());
-        insertStatement.bindLong(4, task.get_prio_id());
-        insertStatement.bindString(5, task.get_due_date());
+        insertStatement.bindString(1, task.getName());
+        insertStatement.bindString(2, task.getDesc());
+        insertStatement.bindString(3, task.getPrio());
+        insertStatement.bindString(4, task.getDue_date());
         return insertStatement.executeInsert();
 
     }
@@ -47,19 +45,19 @@ public class TaskDAO implements DAO<Task>{
     @Override
     public int update(Task task) {
         final ContentValues values = new ContentValues();
-        values.put(KEY_TASK_NAME, task.get_task_name());
-        values.put(KEY_DESC_ID, task.get_desc_id());
-        values.put(KEY_PRIO_ID, task.get_prio_id());
-        values.put(KEY_DUE_DATE, task.get_due_date());
+        values.put(KEY_TASK_NAME, task.getName());
+        values.put(KEY_DESC_, task.getDesc());
+        values.put(KEY_PRIO, task.getPrio());
+        values.put(KEY_DUE_DATE, task.getDue_date());
 
-        return db.update(TABLE_TASKS, values, KEY_TASK_ID + " = ?", new String[] { String.valueOf(task.get_task_id()) });
+        return db.update(TABLE_TASKS, values, KEY_TASK_ID + " = ?", new String[] { String.valueOf(task.getId()) });
     }
 
     @Override
     public void delete(Task task) {
         db.delete(TABLE_TASKS, KEY_TASK_ID + " = ?",
-                new String[] { String.valueOf(task.get_task_id()) });
-        db.close();
+                new String[] { String.valueOf(task.getId()) });
+
     }
 
     @Override
@@ -68,12 +66,12 @@ public class TaskDAO implements DAO<Task>{
         Cursor c =
                 db.query(TABLE_TASKS,
                         new String[] {
-                                KEY_TASK_ID, KEY_TASK_NAME, KEY_USER_ID,
-                                KEY_DESC_ID, KEY_PRIO_ID, KEY_DUE_DATE},
+                                KEY_TASK_ID, KEY_TASK_NAME,
+                                KEY_DESC_, KEY_PRIO, KEY_DUE_DATE},
                         KEY_TASK_ID + " = ?", new String[] { String.valueOf(id_task) },
                         null, null, null, "1");
         if (c.moveToFirst()) {
-            task = this.buildStudentFromCursor(c);
+            task = this.buildTaskFromCursor(c);
         }
         if (!c.isClosed()) {
             c.close();
@@ -86,12 +84,12 @@ public class TaskDAO implements DAO<Task>{
         List<Task> list = new ArrayList<Task>();
         Cursor c =
                 db.query(TABLE_TASKS, new String[] {
-                                KEY_TASK_ID, KEY_TASK_NAME, KEY_USER_ID,
-                                KEY_DESC_ID, KEY_PRIO_ID, KEY_DUE_DATE},
+                                KEY_TASK_ID, KEY_TASK_NAME,
+                                KEY_DESC_, KEY_PRIO, KEY_DUE_DATE},
                         null, null, null, null, KEY_DUE_DATE, null);
         if (c.moveToFirst()) {
             do {
-                Task task = this.buildStudentFromCursor(c);
+                Task task = this.buildTaskFromCursor(c);
                 if (task != null) {
                     list.add(task);
                 }
@@ -103,16 +101,15 @@ public class TaskDAO implements DAO<Task>{
         return list;
     }
 
-    private Task buildStudentFromCursor(Cursor c) {
+    private Task buildTaskFromCursor(Cursor c) {
         Task task = null;
         if (c != null) {
             task = new Task();
-            task.set_task_id(c.getLong(0));
-            task.set_task_name(c.getString(1));
-            task.set_user_id(c.getLong(2));
-            task.set_desc_id(c.getLong(3));
-            task.set_prio_id(c.getLong(4));
-            task.set_due_date(c.getString(5));
+            task.setId(c.getLong(0));
+            task.setName(c.getString(1));
+            task.setDesc(c.getString(2));
+            task.setPrio(c.getString(3));
+            task.setDue_date(c.getString(4));
         }
         return task;
     }

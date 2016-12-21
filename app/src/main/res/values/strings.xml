@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Terminarz</string>
+    <string-array name="priorities">
+        <item>Important</item>
+        <item>Less Important</item>
+        <item>Unimportant</item>
+    </string-array>
 </resources>

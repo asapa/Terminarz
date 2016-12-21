@@ -8,11 +8,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
+
+public class LoginActivity extends AppCompatActivity {
     EditText loginEditText,passEditText;
     Button btnLogin;
     Button btnRegister;
+    DataManagerImpl dataManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,18 +24,38 @@ public class MainActivity extends AppCompatActivity {
         loginEditText = (EditText) findViewById(R.id.loginEditText);
         passEditText = (EditText) findViewById(R.id.passEditText);
         btnLogin = (Button) findViewById(R.id.btnLogin);
-        btnRegister = (Button) findViewById(R.id.btnRegister);
+        btnRegister = (Button) findViewById(R.id.btnRegister2);
+        dataManager = new DataManagerImpl(this);
+
         loadPreferences();
+
+
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 savePreferences();
-                Intent intent = new Intent(MainActivity.this,ShowTask.class);
-                startActivity(intent);
+
+                String pass = passEditText.getText().toString();
+                String password = dataManager.searchPass(pass);
+                if(pass.equals(password)){
+                    Intent intent = new Intent(LoginActivity.this,AllTasks.class);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(LoginActivity.this, "Wrong password", Toast.LENGTH_SHORT).show();
+                }
+
+
             }
         });
 
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this,RegisterUser.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void loadPreferences(){

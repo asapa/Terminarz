@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_show_task"
+    android:id="@+id/activity_edit_task"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
-    tools:context="com.example.asapa.terminarz.ShowTask">
+    tools:context="com.example.asapa.terminarz.EditTask">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -50,13 +50,45 @@
         android:layout_width="130dp"
         android:layout_height="40dp" />
 
+    <TextView
+        android:text="Task description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="63dp"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/dueDateTV"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/dueDateTV"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="12dp">
+
+        <Button
+            android:text="CHOOSE  DATE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnDate"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="CHOOSE TIME"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnTime"
+            android:layout_weight="1" />
+    </LinearLayout>
+
     <EditText
         android:id="@+id/taskNameTV"
         android:layout_height="40dp"
+        android:layout_width="300dp"
         android:layout_alignBaseline="@+id/textView1"
         android:layout_alignBottom="@+id/textView1"
-        android:layout_toEndOf="@+id/textView2"
-        android:layout_width="250dp" />
+        android:layout_toEndOf="@+id/textView2" />
 
     <TextView
         android:text="Due Date"
@@ -71,47 +103,17 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
+        android:layout_height="250dp"
         android:id="@+id/taskDescTV"
         android:inputType="textMultiLine"
         android:layout_below="@+id/textView3"
-        android:layout_alignParentStart="true"
-        android:layout_height="100dp" />
+        android:layout_alignParentStart="true" />
 
     <Spinner
-        android:layout_width="200dp"
-        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/dueDateTV"
         android:id="@+id/spinner"
-        android:layout_alignTop="@+id/taskNameTV"
         android:layout_toEndOf="@+id/textView3"
-        android:layout_marginStart="17dp" />
-
-    <Button
-        android:text="CHOOSE  DATE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnDate"
-        android:layout_weight="1"
-        android:layout_alignBaseline="@+id/dueDateTV"
-        android:layout_alignBottom="@+id/dueDateTV"
-        android:layout_toStartOf="@+id/btnTime"
-        android:layout_marginEnd="31dp" />
-
-    <Button
-        android:text="CHOOSE TIME"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnTime"
-        android:layout_weight="1"
-        android:layout_marginEnd="13dp"
-        android:layout_alignBaseline="@+id/btnDate"
-        android:layout_alignBottom="@+id/btnDate"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:text="Task description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/dueDateTV"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/textView3" />
 </RelativeLayout>
