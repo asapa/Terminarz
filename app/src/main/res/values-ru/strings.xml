@@ -6,15 +6,20 @@
     <string name="Task">Задание:</string>
     <string name="Btn_choose_date">Выбор даты</string>
     <string name="Btn_choose_time">Выбор времени</string>
-    <string name="Btn_add_new_task">Создать новую заметку</string>
+    <string name="Btn_add_new_task">Новая заметкa</string>
     <string name="Login">Логин</string>
     <string name="Password">Пароль:</string>
     <string name="Register">Регистрация</string>
     <string name="Password_confirm">Повтори пароль:</string>
     <string name="btn_save">Сохранить</string>
+    <string name="settings">Настройки</string>
+    <string name="bnt_pl">Польский</string>
+    <string name="btn_eng">Английский</string>
+    <string name="bnt_ru">Русский</string>
     <string-array name="priorities">
         <item>Срочное</item>
         <item>Важное</item>
         <item>Неважное</item>
     </string-array>
+    <string name="login_error">Неверный логин/пароль</string>
 </resources>

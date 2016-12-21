@@ -3,6 +3,7 @@ package com.example.asapa.terminarz;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.List;
+import java.util.Locale;
 
 public class LoginActivity extends AppCompatActivity {
     EditText loginEditText,passEditText;
@@ -20,6 +22,9 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+       setAplicationLanguage();
+
         setContentView(R.layout.activity_main);
         loginEditText = (EditText) findViewById(R.id.loginEditText);
         passEditText = (EditText) findViewById(R.id.passEditText);
@@ -59,9 +64,25 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    private void setAplicationLanguage() {
+        String languageToLoad  = "pl";
+
+        SharedPreferences mp = getSharedPreferences("LangPref", Context.MODE_PRIVATE);
+        languageToLoad=mp.getString("lang","pl");
+
+
+        Locale locale = new Locale(languageToLoad);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,
+                getBaseContext().getResources().getDisplayMetrics());
+    }
+
     public void loadPreferences(){
         SharedPreferences mp = getSharedPreferences("MyPreference", Context.MODE_PRIVATE);
         loginEditText.setText(mp.getString("text",""));
+
 
     }
 

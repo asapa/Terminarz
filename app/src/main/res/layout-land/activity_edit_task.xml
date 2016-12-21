@@ -17,14 +17,14 @@
         android:layout_marginBottom="10dp">
 
         <Button
-            android:text="Cancel"
+            android:text="@android:string/cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cancelBtn"
             android:layout_weight="0.30" />
 
         <Button
-            android:text="Save"
+            android:text="@string/btn_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/saveBtn"

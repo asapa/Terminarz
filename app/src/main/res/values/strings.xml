@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Terminarz</string>
+    <string name="app_name">Organizer</string>
     <string name="termin">Due Date</string>
     <string name="TaskDescription">Task Description:</string>
     <string name="Task">Task:</string>
@@ -11,9 +11,14 @@
     <string name="Register">Register</string>
     <string name="Password_confirm">Confirm Password</string>
     <string name="btn_save">Save</string>
+    <string name="settings">Settings</string>
+    <string name="bnt_pl">Polish</string>
+    <string name="btn_eng">English</string>
+    <string name="bnt_ru">Russian</string>
     <string-array name="priorities">
         <item>Important</item>
         <item>Less Important</item>
         <item>Unimportant</item>
     </string-array>
+    <string name="login_error">Wrong login/password</string>
 </resources>

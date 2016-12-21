@@ -12,9 +12,14 @@
     <string name="Register">Rejestracja</string>
     <string name="Password_confirm">Powtrórz hasło:</string>
     <string name="btn_save">Zapisz</string>
+    <string name="settings">Ustawienia</string>
+    <string name="bnt_pl">Polski</string>
+    <string name="btn_eng">Angielski</string>
+    <string name="bnt_ru">Rosyjski</string>
     <string-array name="priorities">
         <item>Pilne</item>
         <item>Ważne</item>
         <item>Mniej ważne</item>
     </string-array>
+    <string name="login_error">Błedne dane logowania</string>
 </resources>

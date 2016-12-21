@@ -44,8 +44,11 @@ public class TaskAdapter extends BaseAdapter {
         if (vi == null)
             vi = inflater.inflate(R.layout.row, null);
         TextView text = (TextView) vi.findViewById(R.id.textView1);
-        String text2 = "Task: " + task.getName() + " | Due Date: " + task.getDue_date();
+        String text2 = context.getString(R.string.Task) +" " + task.getName() + " | "+ context.getString(R.string.termin) +" " + task.getDue_date();
+
         text.setText(text2);
         return vi;
     }
+
+
 }

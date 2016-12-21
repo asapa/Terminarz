@@ -12,6 +12,7 @@ import java.util.List;
 
 public class AllTasks extends AppCompatActivity {
     Button btn;
+    Button btnSettings;
     public static DataManagerImpl dataManager;
     public static TaskAdapter taskAdapter;
     @Override
@@ -20,6 +21,8 @@ public class AllTasks extends AppCompatActivity {
         setContentView(R.layout.activity_all_tasks);
 
         btn = (Button) findViewById(R.id.btnAdd);
+        btnSettings=(Button) findViewById(R.id.btnSettings);
+
         final ListView listView = (ListView) findViewById(R.id.tasksLV);
 
         dataManager = new DataManagerImpl(this);
@@ -65,6 +68,15 @@ public class AllTasks extends AppCompatActivity {
                 startActivity(getIntent());
                 overridePendingTransition(0, 0);
                 return true;
+            }
+        });
+
+
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AllTasks.this,SettingsActivity.class);
+                startActivity(intent);
             }
         });
 
