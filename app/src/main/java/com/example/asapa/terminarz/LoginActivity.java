@@ -37,12 +37,13 @@ public class LoginActivity extends AppCompatActivity {
                 savePreferences();
 
                 String pass = passEditText.getText().toString();
-                String password = dataManager.searchPass(pass);
+                String login = loginEditText.getText().toString();
+                String password = dataManager.searchPass(login);
                 if(pass.equals(password)){
                     Intent intent = new Intent(LoginActivity.this,AllTasks.class);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(LoginActivity.this, "Wrong password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Wrong login or password", Toast.LENGTH_SHORT).show();
                 }
 
 
