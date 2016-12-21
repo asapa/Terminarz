@@ -55,6 +55,19 @@ public class AllTasks extends AppCompatActivity {
             }
         });
 
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                long id = adapterView.getItemIdAtPosition(i);
+                dataManager.deleteTask(id);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(getIntent());
+                overridePendingTransition(0, 0);
+                return true;
+            }
+        });
+
     }
 
 }
