@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Органайзер</string>
+    <string name="termin">Срок</string>
+    <string name="TaskDescription">Заметка задания:</string>
+    <string name="Task">Задание:</string>
+    <string name="Btn_choose_date">Выбор даты</string>
+    <string name="Btn_choose_time">Выбор времени</string>
+    <string name="Btn_add_new_task">Создать новую заметку</string>
+    <string name="Login">Логин</string>
+    <string name="Password">Пароль:</string>
+    <string name="Register">Регистрация</string>
+    <string name="Password_confirm">Повтори пароль:</string>
+    <string name="btn_save">Сохранить</string>
+    <string-array name="priorities">
+        <item>Срочное</item>
+        <item>Важное</item>
+        <item>Неважное</item>
+    </string-array>
+</resources>
