@@ -13,9 +13,9 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_height="300dp">
+        android:layout_alignParentStart="true">
 
         <TextView
             android:text="@string/Login"
@@ -55,5 +55,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/btnRegister2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewReklama"
+            android:text="@string/string_reklama" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonDetails"
+            android:text="@string/btn_see_details" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/frameLayoutReklama"></FrameLayout>
     </LinearLayout>
+
 </RelativeLayout>

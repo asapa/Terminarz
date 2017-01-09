@@ -22,4 +22,11 @@
         <item>Mniej ważne</item>
     </string-array>
     <string name="login_error">Błedne dane logowania</string>
+    <string name="string_reklama">Kup pełną wersje</string>
+    <string name="btn_see_details">Zobacz szczegóły</string>
+    <string name="string_price">Cena</string>
+    <string name="btn_send">Wyślij</string>
+    <string name="string_donate">Ile chcesz wydać?</string>
+    <string name="string_redirect_to_bank">Za chwilę zostaniesz przekierowany do banku</string>
+    <string name="hide_details">Schowaj szczegóły</string>
 </resources>

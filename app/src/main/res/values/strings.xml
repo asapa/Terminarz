@@ -21,4 +21,13 @@
         <item>Unimportant</item>
     </string-array>
     <string name="login_error">Wrong login/password</string>
+    <string name="string_reklama">Buy Full Version to see more options</string>
+    <string name="btn_see_details">SEE DETAILS</string>
+    <string name="string_price">PRICE</string>
+    <string name="btn_send">SEND</string>
+    <string name="string_donate">How mutch do you want to donate?</string>
+    <string name="string_redirect_to_bank">Whait for the moment, you will be redirect to your bank.</string>
+    <string name="hide_details">HIDE DETAILS</string>
+
+
 </resources>

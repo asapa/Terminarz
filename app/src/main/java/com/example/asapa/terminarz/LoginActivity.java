@@ -4,9 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -18,6 +21,11 @@ public class LoginActivity extends AppCompatActivity {
     EditText loginEditText,passEditText;
     Button btnLogin;
     Button btnRegister;
+    Button btnSeeDetals;
+    boolean seeDeetailsFlag;
+    Fragment fragReklama;
+
+    FragmentTransaction frTrans;
     DataManagerImpl dataManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +38,11 @@ public class LoginActivity extends AppCompatActivity {
         passEditText = (EditText) findViewById(R.id.passEditText);
         btnLogin = (Button) findViewById(R.id.btnLogin);
         btnRegister = (Button) findViewById(R.id.btnRegister2);
+        btnSeeDetals= (Button) findViewById(R.id.buttonDetails);
+
+        seeDeetailsFlag=false;
+
+        fragReklama=new FragmentReklama();
         dataManager = new DataManagerImpl(this);
 
         loadPreferences();
@@ -60,6 +73,29 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this,RegisterUser.class);
                 startActivity(intent);
+            }
+        });
+
+
+        btnSeeDetals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                frTrans= getFragmentManager().beginTransaction();
+
+                if(!seeDeetailsFlag && frTrans.isEmpty()) {
+                    frTrans.add(R.id.frameLayoutReklama, fragReklama);
+                    btnSeeDetals.setText(getApplicationContext().getString(R.string.hide_details));
+                    seeDeetailsFlag=true;
+                }
+                else{
+                    Fragment reklama=getFragmentManager().findFragmentById(R.id.frameLayoutReklama);
+                    frTrans.remove(reklama);
+                    btnSeeDetals.setText(getApplicationContext().getString(R.string.btn_see_details));
+                    seeDeetailsFlag=false;
+                }
+                frTrans.commit();
+
             }
         });
     }
