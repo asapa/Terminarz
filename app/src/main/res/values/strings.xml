@@ -28,6 +28,8 @@
     <string name="string_donate">How mutch do you want to donate?</string>
     <string name="string_redirect_to_bank">Whait for the moment, you will be redirect to your bank.</string>
     <string name="hide_details">HIDE DETAILS</string>
+    <string name="low_battery">Battery is low, don`t forget about your tasks!</string>
+    <string name="to_do">Things to do:</string>
 
 
 </resources>

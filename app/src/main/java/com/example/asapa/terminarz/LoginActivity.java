@@ -100,6 +100,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+
     private void setAplicationLanguage() {
         String languageToLoad  = "pl";
 

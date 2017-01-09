@@ -29,4 +29,6 @@
     <string name="string_donate">Ile chcesz wydać?</string>
     <string name="string_redirect_to_bank">Za chwilę zostaniesz przekierowany do banku</string>
     <string name="hide_details">Schowaj szczegóły</string>
+    <string name="low_battery">Bateria rozładowana, nie zapomnij o nadchodzących zadaiach!</string>
+    <string name="to_do">Zadań do zrobienia:</string>
 </resources>

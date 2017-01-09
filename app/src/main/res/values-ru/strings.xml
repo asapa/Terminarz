@@ -29,4 +29,6 @@
     <string name="string_donate">Сколько желаете пожертвовать?</string>
     <string name="string_redirect_to_bank">Ожидайте, вы будете перенаправлены в банкю</string>
     <string name="hide_details">Спрячь подробности</string>
+    <string name="low_battery">Аккумулятор разражен, не забудьте о предстоящих событиях!</string>
+    <string name="to_do">Предстоящих задач:</string>
 </resources>
