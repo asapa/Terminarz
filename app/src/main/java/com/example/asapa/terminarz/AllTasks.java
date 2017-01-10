@@ -1,10 +1,15 @@
 package com.example.asapa.terminarz;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.BatteryManager;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.NotificationCompat;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -94,6 +99,7 @@ public class AllTasks extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
     }
 

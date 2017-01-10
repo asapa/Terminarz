@@ -2,7 +2,9 @@ package com.example.asapa.terminarz;
 
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -65,13 +67,19 @@ public class AddTask extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Task task = new Task();
-                task.setName(taskName.getText().toString());
+                String taskNameTmp=taskName.getText().toString();
+                task.setName(taskNameTmp);
                 task.setDesc(taskDesc.getText().toString());
                 String text = spinner.getSelectedItem().toString();
                 task.setPrio(text);
                 task.setDue_date(txt.getText().toString());
                 dataManager.saveTask(task);
                 Intent intent = new Intent(AddTask.this,AllTasks.class);
+               //запуск служюы отсчёта времени
+                long howMutchToEvent=(dateTime.getTimeInMillis()-System.currentTimeMillis())/1000;
+                if(howMutchToEvent>=0)
+                startService(new Intent(AddTask.this,CheckService.class).putExtra("time", (int)howMutchToEvent).putExtra("eventTime",txt.getText().toString()).putExtra("eventName",taskNameTmp));
+
                 startActivity(intent);
             }
         });
@@ -117,5 +125,6 @@ public class AddTask extends AppCompatActivity {
     private void updateDueDate(){
         txt.setText(formatDateTime.format(dateTime.getTime()));
     }
+
 
 }
